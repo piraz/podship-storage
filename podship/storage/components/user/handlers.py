@@ -34,12 +34,12 @@ class LoginForm(Form):
 
 class LoginHandler(firenado.tornadoweb.TornadoHandler):
 
-    @served_by('diasporapy.pod.components.user.services.UserService')
+    @served_by('diasporapy.storage.components.user.services.UserService')
     def get(self):
-        self.render('pod:account/login.html',
+        self.render('storage:account/login.html',
                     message=self.user_service.get_message('User Login'))
 
-    @served_by('diasporapy.pod.components.user.services.UserService')
+    @served_by('diasporapy.storage.components.user.services.UserService')
     def post(self):
         form = LoginForm(self.request.arguments)
         error_data = {}
@@ -67,4 +67,4 @@ class LoginHandler(firenado.tornadoweb.TornadoHandler):
 class SignupHandler(firenado.tornadoweb.TornadoHandler):
 
     def get(self):
-        self.render('pod:account/register.html')
+        self.render('storage:account/register.html')
