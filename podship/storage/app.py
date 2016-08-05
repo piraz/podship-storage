@@ -26,16 +26,16 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class StorageComponent(firenado.tornadoweb.TornadoComponent):
+class StorageAppComponent(firenado.tornadoweb.TornadoComponent):
 
     def __init__(self, name, application):
-        super(StorageComponent, self).__init__(name, application)
+        super(StorageAppComponent, self).__init__(name, application)
         self.ping_engine = None
         self.security_conf = None
         self.master_gateway_available = False
         self.project_root = os.path.abspath(
                 os.path.join(os.path.dirname(__file__),
-                             "..", "..", "podship", "podship"))
+                             "..", "..", "..", "podship", "podship"))
         self.gateways = {}
 
     def get_handlers(self):

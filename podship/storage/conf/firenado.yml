@@ -21,10 +21,10 @@ data:
 
 components:
   - id: storage
-    class: podship-storage.StorageComponent
+    class: podship.storage.StorageAppComponent
     enabled: true
   - id: user
-    class: podship-storage.components.user.UserComponent
+    class: podship.storage.components.UserComponent
     enabled: true
   - id: assets
     enabled: true
