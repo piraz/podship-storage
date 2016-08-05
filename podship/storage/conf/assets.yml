@@ -1,4 +1,4 @@
-root: ..
+root: ../../../podship/podship
 bower:
   dependencies:
     - name: "bootstrap"
