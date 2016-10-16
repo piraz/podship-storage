@@ -34,12 +34,12 @@ class LoginForm(Form):
 
 class LoginHandler(firenado.tornadoweb.TornadoHandler):
 
-    @served_by('diasporapy.storage.components.user.services.UserService')
+    @served_by('podship.storage.components.user.services.UserService')
     def get(self):
         self.render('storage:account/login.html',
                     message=self.user_service.get_message('User Login'))
 
-    @served_by('diasporapy.storage.components.user.services.UserService')
+    @served_by('podship.storage.components.user.services.UserService')
     def post(self):
         form = LoginForm(self.request.arguments)
         error_data = {}
